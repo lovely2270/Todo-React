@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+}
+.form input {
+  flex: 1;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid rgb(85, 130, 255);
+}
+.createBtn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgb(85, 130, 255);
+  color: white;
+}
+.todoList {
+  margin-top: 1rem;
+}
+.listItem {
+  display: flex;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgb(204, 216, 248);
+}
+.todoItem {
+  flex: 1;
+}
+.deleteBtn {
+  /* padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem; */
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  /* background-color: rgb(85, 130, 255); */
+  color: rgb(233, 64, 64);
+}

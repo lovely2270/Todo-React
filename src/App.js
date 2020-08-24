@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="Todo">
       <div className="Todo-Header">ToDo</div>
-      <InsertTodo />
+      <div className="Todo-Form">
+        <InsertTodo />
+      </div>
     </div>
   );
 }

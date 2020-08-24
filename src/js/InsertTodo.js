@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "/home/jihyeon/React/todo/src/css/InsertTodo.css";
+import { IoMdClose } from "react-icons/io";
 
 const InsertTodo = () => {
   const [todos, setTodos] = useState([]);
@@ -16,22 +18,38 @@ const InsertTodo = () => {
     setTodos(nextTodos);
     setInputText("");
   };
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
   const onRemove = (id) => {
     const nextTodos = todos.filter((todo) => todo.id !== id);
     setTodos(nextTodos);
   };
 
   const todosList = todos.map((todo) => (
-    <li key={todo.id}>
-      {todo.text}
-      <button onClick={() => onRemove(todo.id)}>삭제</button>
-    </li>
+    <div key={todo.id} className="listItem">
+      <div className="todoItem">{todo.text}</div>
+
+      <IoMdClose
+        size="30"
+        className="deleteBtn"
+        onClick={() => onRemove(todo.id)}
+      >
+        삭제
+      </IoMdClose>
+    </div>
   ));
   return (
     <>
-      <input value={inputText} onChange={onChange} />
-      <button onClick={onClick}>추가</button>
-      <ul>{todosList}</ul>
+      <div className="form">
+        <input value={inputText} onChange={onChange} onKeyPress={onKeyPress} />
+        <button className="createBtn" onClick={onClick}>
+          추가
+        </button>
+      </div>
+      <div className="todoList">{todosList}</div>
     </>
   );
 };
