@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "/home/jihyeon/React/todo/src/css/InsertTodo.css";
-import { IoMdClose } from "react-icons/io";
+import { IoMdCheckmark, IoMdClose } from "react-icons/io";
 
 const InsertTodo = () => {
   const [todos, setTodos] = useState([]);
@@ -12,7 +12,7 @@ const InsertTodo = () => {
     const nextTodos = todos.concat({
       id: nextId,
       text: inputText,
-      check: false,
+      checked: false,
     });
     setNextId(nextId + 1);
     setTodos(nextTodos);
@@ -23,6 +23,18 @@ const InsertTodo = () => {
       onClick();
     }
   };
+  const onToggle = (id) => {
+    const checkTodo = todos.filter((todo) => todo.id === id);
+    const checkTodoIndex = todos.findIndex((todo) => todo.id === id);
+    const selected = checkTodo[0];
+    const nextTodos = [...todos];
+
+    nextTodos[checkTodoIndex] = {
+      ...selected,
+      checked: !selected.checked,
+    };
+    setTodos(nextTodos);
+  };
   const onRemove = (id) => {
     const nextTodos = todos.filter((todo) => todo.id !== id);
     setTodos(nextTodos);
@@ -30,17 +42,24 @@ const InsertTodo = () => {
 
   const todosList = todos.map((todo) => (
     <div key={todo.id} className="listItem">
-      <div className="todoItem">{todo.text}</div>
-
+      {todo.checked ? (
+        <div className="todoItemChecked">{todo.text}</div>
+      ) : (
+        <div className="todoItem">{todo.text}</div>
+      )}
+      <IoMdCheckmark
+        size="30"
+        className="checkBtn"
+        onClick={() => onToggle(todo.id)}
+      />
       <IoMdClose
         size="30"
         className="deleteBtn"
         onClick={() => onRemove(todo.id)}
-      >
-        삭제
-      </IoMdClose>
+      />
     </div>
   ));
+
   return (
     <>
       <div className="form">

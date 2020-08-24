@@ -29,8 +29,13 @@
   margin-top: 1rem;
   border-bottom: 1px solid rgb(204, 216, 248);
 }
-.todoItem {
+.todoItem,
+.todoItemChecked {
   flex: 1;
+}
+.todoItemChecked {
+  color: gray;
+  text-decoration: line-through;
 }
 .deleteBtn {
   /* padding-top: 0.5rem;
@@ -42,4 +47,18 @@
   border-radius: 5px;
   /* background-color: rgb(85, 130, 255); */
   color: rgb(233, 64, 64);
+}
+.deleteBtn:hover {
+  background-color: rgb(233, 64, 64);
+  color: white;
+}
+.checkBtn {
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: rgb(61, 180, 112);
+}
+.checkBtn:hover {
+  background-color: rgb(61, 180, 112);
+  color: white;
 }
