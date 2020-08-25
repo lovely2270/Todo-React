@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "/home/jihyeon/React/todo/src/css/InsertTodo.css";
 import { IoMdCheckmark, IoMdClose } from "react-icons/io";
+import { BiEditAlt } from "react-icons/bi";
 
 const InsertTodo = () => {
   const [todos, setTodos] = useState([]);
@@ -37,11 +38,33 @@ const InsertTodo = () => {
   };
   const onRemove = (id) => {
     const nextTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(nextTodos);
+    if (window.confirm("해당 ToDo를 삭제하시겠습니까?")) {
+      setTodos(nextTodos);
+    }
+  };
+  const onEdit = (id) => {
+    const checkTodo = todos.filter((todo) => todo.id === id);
+    const checkTodoIndex = todos.findIndex((todo) => todo.id === id);
+    const selected = checkTodo[0];
+    console.log(selected.text);
+    let newtext = prompt("ToDo 수정", selected.text);
+    {
+      const nextTodos = [...todos];
+
+      nextTodos[checkTodoIndex] = {
+        ...selected,
+        text: newtext,
+      };
+      setTodos(nextTodos);
+    }
   };
 
   const todosList = todos.map((todo) => (
-    <div key={todo.id} className="listItem">
+    <div
+      key={todo.id}
+      className="listItem"
+      onDoubleClick={() => onEdit(todo.id)}
+    >
       {todo.checked ? (
         <div className="todoItemChecked">{todo.text}</div>
       ) : (
@@ -51,6 +74,11 @@ const InsertTodo = () => {
         size="30"
         className="checkBtn"
         onClick={() => onToggle(todo.id)}
+      />
+      <BiEditAlt
+        size="30"
+        className="editBtn"
+        onClick={() => onEdit(todo.id)}
       />
       <IoMdClose
         size="30"
