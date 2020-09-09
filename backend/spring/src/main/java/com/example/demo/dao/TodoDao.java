@@ -23,6 +23,11 @@ public class TodoDao {
 		System.out.println("todoList Dao");
 		return this.sqlSessionTemplate.selectList("getTodoList");
 	}
+	
+	public List<TodoInfo> searchedTodoList(String searchText) {
+		System.out.println("searchedTodoList Dao");
+		return this.sqlSessionTemplate.selectList("searchedTodoList", searchText);
+	}
 
 	public void insertTodo(TodoInfo todo) {
 		System.out.println("insertTodo Dao");
@@ -44,5 +49,7 @@ public class TodoDao {
 		System.out.println("deleteCheckedTodo Dao");
 		this.sqlSessionTemplate.delete("deleteCheckedTodo");
 	}
+
+	
 
 }

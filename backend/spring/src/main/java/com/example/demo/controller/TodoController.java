@@ -33,6 +33,13 @@ public class TodoController {
 		return todoService.getTodoList();
 	}
 	
+	//검색된 할 일 리스트 가져오기
+	@GetMapping("{searchText}")
+	public List<TodoInfo> searchedTodoList(@PathVariable String searchText) {
+		System.out.println("searchedTodoList controller");
+		return todoService.searchedTodoList(searchText);
+	}
+	
 	//할 일 추가
 	@PostMapping
 	public TodoInfo insertTodo(@RequestBody TodoInfo todo) {
@@ -66,9 +73,9 @@ public class TodoController {
 	}
 	
 	//할 일 삭제
-		@DeleteMapping()
-		public void deleteCheckedTodo() {
-			System.out.println("deleteCheckedTodo controller");
-			todoService.deleteCheckedTodo();
-		}
+	@DeleteMapping()
+	public void deleteCheckedTodo() {
+		System.out.println("deleteCheckedTodo controller");
+		todoService.deleteCheckedTodo();
+	}
 }

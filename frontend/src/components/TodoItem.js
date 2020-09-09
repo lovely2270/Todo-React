@@ -6,20 +6,21 @@ import DatePick from "./DatePick";
 
 //할일 하나
 const TodoItem = ({ todo, onToggle, onRemove, onEdit, onSettingDate }) => {
+  //현재 todo에 저장되었는 text
   const showText = todo.text;
 
   return (
-    <div
-      key={todo.id}
-      className="listItem"
-      // onDoubleClick={() => onEdit(todo.id)}
-    >
+    <div key={todo.id} className="listItem">
       <div>
         <DatePick todo={todo} onSettingDate={onSettingDate} />
       </div>
+
+      {/* css를 위해 경우 나누기 */}
       {todo.checked ? (
+        // todo가 완료되었으면
         <div className="todoItemChecked">{showText}</div>
       ) : (
+        // todo가 아직 완료되지 않았으면
         <div className="todoItem">{showText}</div>
       )}
       <div className="btnsDiv">
@@ -39,7 +40,6 @@ const TodoItem = ({ todo, onToggle, onRemove, onEdit, onSettingDate }) => {
                   size="30"
                   className="editBtn"
                   onClick={() => onEdit(todo.id)}
-                  //onClick={onEditClick}
                 />
               </td>
               <td>

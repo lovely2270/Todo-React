@@ -21,3 +21,6 @@ export const updateTodo = (todo) =>
 export const deleteTodo = (id) => axios.delete(TODO_API_BASE_URL + "/" + id);
 
 export const deleteCheckedTodo = () => axios.delete(TODO_API_BASE_URL);
+
+export const getSearchTodo = (searchText) =>
+  axios.get(TODO_API_BASE_URL + "/" + searchText);

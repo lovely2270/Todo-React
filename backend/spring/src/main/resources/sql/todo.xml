@@ -4,7 +4,17 @@
 <mapper namespace="com.example.demo.mapper.TodoMapper">
 	<!-- 할 일 리스트 가져오기 -->
     <select id="getTodoList" resultType="com.example.demo.model.TodoInfo">
-    	SELECT id, text, checked, createTime, dday FROM todos
+    	SELECT id, text, checked, createTime, dday 
+    	FROM todos
+    	ORDER BY createTime
+    </select>
+    
+    
+    <!-- 할 일 리스트 가져오기 -->
+    <select id="searchedTodoList" resultType="com.example.demo.model.TodoInfo" parameterType="String">
+    	SELECT id, text, checked, createTime, dday 
+    	FROM todos
+    	WHERE text LIKE CONCAT('%',#{searchText},'%')
     	ORDER BY createTime
     </select>
     

@@ -7,6 +7,7 @@ import {
   remove,
   edit,
   settingDate,
+  search,
   getTodos,
 } from "../modules/todos";
 import Todos from "../components/Todos";
@@ -21,6 +22,7 @@ const TodosContainer = ({
   remove,
   edit,
   settingDate,
+  search,
   getTodos,
   loadingTodos,
 }) => {
@@ -46,6 +48,7 @@ const TodosContainer = ({
       onRemove={remove}
       onEdit={edit}
       onSettingDate={settingDate}
+      onSearch={search}
       loadingTodos={loadingTodos}
     />
   );
@@ -64,6 +67,7 @@ export default connect(
     remove,
     edit,
     settingDate,
+    search,
     getTodos,
   }
 )(TodosContainer);

@@ -6,13 +6,14 @@ import ColorPickContainer from "./containers/ColorPickContainer";
 import Today from "./components/common/Today";
 
 function App() {
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8080/todos")
-  //     .then((response) => console.log(response));
-  // });
   return (
-    <div className="Todo">
+    <div
+      className="Todo"
+      onContextMenu={(e) => {
+        //우클릭의 기본 메뉴 안나오도록
+        e.preventDefault();
+      }}
+    >
       <div className="Templates">
         <ColorPickContainer />
       </div>

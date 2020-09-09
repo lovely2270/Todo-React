@@ -1,5 +1,6 @@
 .form {
   display: flex;
+  margin-bottom: 1.5rem;
 }
 .form textarea {
   flex: 1;
@@ -8,6 +9,11 @@
   border-bottom: 1px solid var(--todoBackgroundColor);
   resize: none;
 }
+.form textarea::placeholder {
+  font-size: 18px;
+}
+
+.searchBtn,
 .createBtn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

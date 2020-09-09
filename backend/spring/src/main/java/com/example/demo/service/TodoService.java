@@ -18,12 +18,17 @@ public class TodoService {
 		
 		return todoDao.getTodoList();
 	}
+	
+	public List<TodoInfo> searchedTodoList(String searchText) {
+
+		return todoDao.searchedTodoList(searchText);
+	}
 
 	public void insertTodo(TodoInfo todo) {
 		todoDao.insertTodo(todo);
 	}
 
-	public void updateTodo(String id,TodoInfo updateTodo) {
+	public void updateTodo(String id, TodoInfo updateTodo) {
 		todoDao.updateTodo(id, updateTodo);
 	}
 
@@ -35,5 +40,7 @@ public class TodoService {
 		todoDao.deleteCheckedTodo();
 		
 	}
+
+	
 
 }

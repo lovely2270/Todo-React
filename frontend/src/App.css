@@ -2,6 +2,7 @@
   width: 700px;
   margin: 0 auto;
   margin-top: 1rem;
+  border-bottom: 2px solid var(--todoBackgroundColor);
 }
 
 .Templates {
@@ -83,5 +84,5 @@
   background-color: white;
   flex: 0;
   padding: 1rem;
-  border-bottom: 2px solid var(--todoBackgroundColor);
+  /* border-bottom: 2px solid var(--todoBackgroundColor); */
 }

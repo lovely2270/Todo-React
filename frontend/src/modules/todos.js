@@ -3,7 +3,6 @@ import produce from "immer";
 import { updateTodo, deleteTodo } from "../lib/api/todoApi";
 import * as todoApi from "../lib/api/todoApi";
 import createRequestThunk from "../lib/createRequestThunk";
-import moment from "moment";
 
 //액션타입 정의하기
 const CHANGE_INPUT = "todos/CHANGE_INPUT"; //인풋 값을 변경
@@ -14,7 +13,10 @@ const INSERT_SUCCESS = "todos/INSERT_SUCCESS";
 const TOGGLE = "todos/TOGGLE"; //todo 체크
 const REMOVE = "todos/REMOVE"; //todo제거
 const EDIT = "todos/Edit"; //todo수정
-const SETTING_DATE = "todos/SETTIND_DATE";
+const SETTING_DATE = "todos/SETTING_DATE";
+
+const SEARCH = "todos/SEARCH";
+const SEARCH_SUCCESS = "todos/SEARCH_SUCCESS";
 
 const GET_TODOS = "todos/GET_TODOS";
 const GET_TODOS_SUCCESS = "todos/GET_TODOS_SUCCESS";
@@ -34,6 +36,8 @@ export const settingDate = createAction(SETTING_DATE, (id, date) => ({
   id,
   date,
 }));
+
+export const search = createRequestThunk(SEARCH, todoApi.getSearchTodo);
 
 export const getTodos = createRequestThunk(GET_TODOS, todoApi.getTodos);
 
@@ -81,11 +85,14 @@ const todos = handleActions(
       produce(state, (draft) => {
         const todo = draft.todos.find((todo) => todo.id === id);
 
-        //todo.dday = date;
+        todo.dday = date;
 
-        todo.dday = moment(date).format("YYYY / MM / DD");
         updateTodo(todo);
       }),
+    [SEARCH_SUCCESS]: (state, action) => ({
+      ...state,
+      todos: action.payload,
+    }),
     [GET_TODOS_SUCCESS]: (state, action) => ({
       ...state,
       todos: action.payload,
