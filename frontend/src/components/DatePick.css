@@ -1,0 +1,11 @@
+.datePickBtn {
+  background-color: rgb(255, 235, 235);
+  font-size: 18px;
+  margin-right: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: 125px;
+  height: 35px;
+  border: none;
+  border-right: 1px solid rgb(255, 113, 113);
+}

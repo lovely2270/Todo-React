@@ -1,0 +1,18 @@
+:root {
+  --backgroundColor: rgb(233, 245, 250);
+  --todoBackgroundColor: rgb(85, 130, 255);
+
+  --deleteColor: rgb(233, 64, 64);
+  --checkColor: rgb(61, 180, 112);
+
+  /* 색상 목록*/
+  --blueColor: rgb(85, 130, 255);
+  --grayColor: rgb(119, 119, 119);
+  --greenColor: rgb(90, 192, 134);
+  --purpleColor: rgb(170, 132, 223);
+
+  --blueBackColor: rgb(233, 245, 250);
+  --grayBackColor: rgb(224, 224, 224);
+  --greenBackColor: rgb(222, 235, 228);
+  --purpleBackColor: rgb(235, 232, 241);
+}

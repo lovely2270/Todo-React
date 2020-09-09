@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ColorMapper">
+
+
+<!-- 테이블에 존재하지 않을 때 디폴트값 1을 넣어주기 -->
+	<insert id="insertDefaultColor">
+		INSERT INTO color (colorId) 
+		SELECT "blue"
+		WHERE NOT EXISTS (
+			SELECT colorId
+    		FROM color
+		)
+	</insert>
+
+	<!-- 색상 가져오기 -->
+    <select id="getColor" resultType="String">
+    	SELECT colorId
+    		FROM color
+    </select>
+    
+	<!-- 선택한 색으로 바꿔주 -->
+    <update id="clickColor" parameterType="com.example.demo.model.ColorInfo">
+    	UPDATE color
+    	SET colorId=#{colorId}
+    </update>
+    
+</mapper>

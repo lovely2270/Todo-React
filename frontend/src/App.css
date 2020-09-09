@@ -1,0 +1,87 @@
+.Todo {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.Templates {
+  background-color: var(--backgroundColor);
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.blueTemplate,
+.grayTemplate,
+.greenTemplate,
+.purpleTemplate {
+  width: 70px;
+  height: 70px;
+  margin: 0.5rem;
+}
+
+.blueTemplate {
+  background-color: var(--blueColor);
+}
+
+.grayTemplate {
+  background-color: var(--grayColor);
+}
+
+.greenTemplate {
+  background-color: var(--greenColor);
+}
+
+.purpleTemplate {
+  background-color: var(--purpleColor);
+}
+
+.Todo-Header {
+  text-align: center;
+  background-color: var(--todoBackgroundColor);
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Todo-Delete-Btn-Div {
+  background-color: var(--backgroundColor);
+  display: inline-flex;
+}
+
+.Todo-Delete-Btn {
+  padding: 0.4rem;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--backgroundColor);
+  color: var(--deleteColor);
+  border: none;
+  border-top: 3px solid var(--deleteColor);
+  border-left: 3px solid var(--deleteColor);
+  border-right: 3px solid var(--deleteColor);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.Todo-Delete-Btn:hover {
+  background-color: var(--deleteColor);
+  color: white;
+}
+
+.Today-Div {
+  background-color: var(--backgroundColor);
+  padding-right: 10px;
+  float: right;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Todo-Form {
+  background-color: white;
+  flex: 0;
+  padding: 1rem;
+  border-bottom: 2px solid var(--todoBackgroundColor);
+}

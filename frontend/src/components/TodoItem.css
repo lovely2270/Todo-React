@@ -1,0 +1,56 @@
+.listItem {
+  display: flex;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid var(--backgroundColor);
+  word-break: break-all;
+  user-select: none;
+}
+
+.todoItem,
+.todoItemChecked {
+  flex: 1;
+  white-space: pre-line;
+}
+.todoItemChecked {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.btnsDiv {
+  display: flex;
+  align-items: center;
+}
+
+.deleteBtn {
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--deleteColor);
+}
+.deleteBtn:hover {
+  background-color: var(--deleteColor);
+  color: white;
+}
+.checkBtn {
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--checkColor);
+}
+.checkBtn:hover {
+  background-color: var(--checkColor);
+  color: white;
+}
+.editBtn {
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--blueColor);
+}
+.editBtn:hover {
+  background-color: var(--todoBackgroundColor);
+  color: white;
+}
