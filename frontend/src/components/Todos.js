@@ -78,7 +78,7 @@ const Todos = ({
         <div className="Todo-Delete-Btn-Div">
           <DeleteChecked onRemoveChecked={onRemoveChecked} />
         </div>
-        <hr color="var(--todoBackgroundColor)" />
+        <hr />
       </div>
 
       <div className="todoList">

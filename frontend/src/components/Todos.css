@@ -1,3 +1,7 @@
+hr {
+  border-color: var(--todoBackgroundColor);
+}
+
 .form {
   display: flex;
   margin-bottom: 1.5rem;

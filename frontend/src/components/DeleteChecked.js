@@ -1,6 +1,4 @@
 import React from "react";
-// import { deleteCheckedTodo } from "../lib/api/todoApi";
-// import { removeChecked } from "../modules/todos";
 
 //완료체크가 된 ToDo들을 한번에 삭제해주는 함수
 const DeleteChecked = ({ onRemoveChecked }) => {

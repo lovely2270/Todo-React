@@ -51,6 +51,6 @@
   color: var(--blueColor);
 }
 .editBtn:hover {
-  background-color: var(--todoBackgroundColor);
+  background-color: var(--blueColor);
   color: white;
 }

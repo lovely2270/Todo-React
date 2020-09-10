@@ -6,7 +6,7 @@
     <select id="getTodoList" resultType="com.example.demo.model.TodoInfo">
     	SELECT id, text, checked, createTime, dday 
     	FROM todos
-    	ORDER BY checked ,dday
+    	ORDER BY checked
     </select>
     
     <!-- 검색된 할 일 리스트 가져오기 -->
@@ -14,7 +14,7 @@
     	SELECT id, text, checked, createTime, dday 
     	FROM todos
     	WHERE text LIKE CONCAT('%',#{searchText},'%')
-    	ORDER BY createTime
+    	ORDER BY checked
     </select>
     
 	<!-- 할 일 추가 -->
