@@ -47,36 +47,11 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.Todo-Delete-Btn-Div {
-  background-color: var(--backgroundColor);
-  display: inline-flex;
-}
-
-.Todo-Delete-Btn {
-  padding: 0.4rem;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--backgroundColor);
-  color: var(--deleteColor);
-  border: none;
-  border-top: 3px solid var(--deleteColor);
-  border-left: 3px solid var(--deleteColor);
-  border-right: 3px solid var(--deleteColor);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.Todo-Delete-Btn:hover {
-  background-color: var(--deleteColor);
-  color: white;
-}
-
 .Today-Div {
-  background-color: var(--backgroundColor);
-  padding-right: 10px;
-  float: right;
-  font-size: 18px;
+  display: block;
+  padding-left: 10px;
+  font-size: 20px;
+  padding-bottom: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 

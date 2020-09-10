@@ -42,15 +42,14 @@ public class TodoController {
 	
 	//할 일 추가
 	@PostMapping
-	public TodoInfo insertTodo(@RequestBody TodoInfo todo) {
+	public List<TodoInfo> insertTodo(@RequestBody TodoInfo todo) {
 		System.out.println("insertTodo controller");
 		
 		todo.setId(UUID.randomUUID().toString().replaceAll("-", ""));
 		todo.setChecked(false);
 		todo.setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
 
-		todoService.insertTodo(todo);
-		return todo;
+		return todoService.insertTodo(todo);
 	}
 	
 	//할 일 수정
@@ -73,9 +72,9 @@ public class TodoController {
 	}
 	
 	//할 일 삭제
-	@DeleteMapping()
-	public void deleteCheckedTodo() {
+	@DeleteMapping
+	public List<TodoInfo> deleteCheckedTodo() {
 		System.out.println("deleteCheckedTodo controller");
-		todoService.deleteCheckedTodo();
+		return todoService.deleteCheckedTodo();
 	}
 }

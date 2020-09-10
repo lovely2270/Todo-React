@@ -24,8 +24,8 @@ public class TodoService {
 		return todoDao.searchedTodoList(searchText);
 	}
 
-	public void insertTodo(TodoInfo todo) {
-		todoDao.insertTodo(todo);
+	public List<TodoInfo> insertTodo(TodoInfo todo) {
+		return todoDao.insertTodo(todo);
 	}
 
 	public void updateTodo(String id, TodoInfo updateTodo) {
@@ -36,8 +36,8 @@ public class TodoService {
 		todoDao.deleteTodo(id);
 	}
 
-	public void deleteCheckedTodo() {
-		todoDao.deleteCheckedTodo();
+	public List<TodoInfo> deleteCheckedTodo() {
+		return todoDao.deleteCheckedTodo();
 		
 	}
 

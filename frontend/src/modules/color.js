@@ -14,6 +14,7 @@ const GET_COLOR_SUCCESS = "color/GET_COLOR_SUCCESS";
 export const clickColor = createAction(INSERT_COLOR, (colorId) => colorId);
 export const getColor = createRequestThunk(GET_COLOR, colorApi.getColor);
 
+//초기값
 const initialState = {
   color: [],
 };

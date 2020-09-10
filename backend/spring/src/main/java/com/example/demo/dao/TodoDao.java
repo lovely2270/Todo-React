@@ -29,10 +29,10 @@ public class TodoDao {
 		return this.sqlSessionTemplate.selectList("searchedTodoList", searchText);
 	}
 
-	public void insertTodo(TodoInfo todo) {
+	public List<TodoInfo> insertTodo(TodoInfo todo) {
 		System.out.println("insertTodo Dao");
 		this.sqlSessionTemplate.insert("insertTodo", todo);
-		
+		return this.sqlSessionTemplate.selectList("getTodoList");
 	}
 
 	public void updateTodo(String id, TodoInfo updateTodo) {
@@ -45,9 +45,10 @@ public class TodoDao {
 		this.sqlSessionTemplate.delete("deleteTodo", id);
 	}
 
-	public void deleteCheckedTodo() {
+	public List<TodoInfo> deleteCheckedTodo() {
 		System.out.println("deleteCheckedTodo Dao");
 		this.sqlSessionTemplate.delete("deleteCheckedTodo");
+		return this.sqlSessionTemplate.selectList("getTodoList");
 	}
 
 	

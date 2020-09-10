@@ -1,6 +1,7 @@
 import React from "react";
 import "./Todos.css";
 import TodoItem from "./TodoItem";
+import DeleteChecked from "./DeleteChecked";
 
 //할일들
 const Todos = ({
@@ -13,6 +14,7 @@ const Todos = ({
   onEdit,
   onSettingDate,
   onSearch,
+  onRemoveChecked,
   loadingTodos, //로딩
 }) => {
   const onChange = (e) => onChangeInput(e.target.value);
@@ -36,6 +38,7 @@ const Todos = ({
       };
       isfn();
     }
+    //추가한 후에는 textarea를 비우기
     onChangeInput("");
   };
 
@@ -54,8 +57,6 @@ const Todos = ({
       }
     };
     scfn();
-
-    onChangeInput("");
   };
 
   return (
@@ -74,6 +75,10 @@ const Todos = ({
             검색
           </button>
         </form>
+        <div className="Todo-Delete-Btn-Div">
+          <DeleteChecked onRemoveChecked={onRemoveChecked} />
+        </div>
+        <hr color="var(--todoBackgroundColor)" />
       </div>
 
       <div className="todoList">

@@ -17,9 +17,7 @@ function App() {
       <div className="Templates">
         <ColorPickContainer />
       </div>
-      <div className="Todo-Delete-Btn-Div">
-        <DeleteChecked />
-      </div>
+
       <div className="Today-Div">
         <Today />
       </div>

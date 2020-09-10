@@ -8,18 +8,21 @@ import createRequestThunk from "../lib/createRequestThunk";
 const CHANGE_INPUT = "todos/CHANGE_INPUT"; //인풋 값을 변경
 
 const INSERT = "todos/INSERT"; //todo 등록
-const INSERT_SUCCESS = "todos/INSERT_SUCCESS";
+const INSERT_SUCCESS = "todos/INSERT_SUCCESS"; //todo 등록 성공
 
 const TOGGLE = "todos/TOGGLE"; //todo 체크
 const REMOVE = "todos/REMOVE"; //todo제거
 const EDIT = "todos/Edit"; //todo수정
-const SETTING_DATE = "todos/SETTING_DATE";
+const SETTING_DATE = "todos/SETTING_DATE"; //마감일 등록
 
-const SEARCH = "todos/SEARCH";
-const SEARCH_SUCCESS = "todos/SEARCH_SUCCESS";
+const SEARCH = "todos/SEARCH"; //검색
+const SEARCH_SUCCESS = "todos/SEARCH_SUCCESS"; //검색 성공
 
-const GET_TODOS = "todos/GET_TODOS";
-const GET_TODOS_SUCCESS = "todos/GET_TODOS_SUCCESS";
+const GET_TODOS = "todos/GET_TODOS"; //todo 리스트 가져오기
+const GET_TODOS_SUCCESS = "todos/GET_TODOS_SUCCESS"; //todo 리스트 가져오기 성공
+
+const REMOVE_CHECKED = "todos/REMOVE_CHECKED"; //완료된 todo 전부 삭제
+const REMOVE_CHECKED_SUCCESS = "todos/REMOVE_CHECKED_SUCCESS"; //완료된 todo 전부 삭제 성공
 
 //액션 생성함수 만들기
 export const changeInput = createAction(CHANGE_INPUT, (input) => input);
@@ -41,6 +44,12 @@ export const search = createRequestThunk(SEARCH, todoApi.getSearchTodo);
 
 export const getTodos = createRequestThunk(GET_TODOS, todoApi.getTodos);
 
+export const removeChecked = createRequestThunk(
+  REMOVE_CHECKED,
+  todoApi.deleteCheckedTodo
+);
+
+//초기값
 const initialState = {
   input: "",
   todos: [],
@@ -55,7 +64,7 @@ const todos = handleActions(
       }),
     [INSERT_SUCCESS]: (state, action) => ({
       ...state,
-      todos: state.todos.concat(action.payload),
+      todos: action.payload,
     }),
     [TOGGLE]: (state, { payload: id }) =>
       produce(state, (draft) => {
@@ -94,6 +103,10 @@ const todos = handleActions(
       todos: action.payload,
     }),
     [GET_TODOS_SUCCESS]: (state, action) => ({
+      ...state,
+      todos: action.payload,
+    }),
+    [REMOVE_CHECKED_SUCCESS]: (state, action) => ({
       ...state,
       todos: action.payload,
     }),

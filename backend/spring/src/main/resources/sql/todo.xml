@@ -6,11 +6,10 @@
     <select id="getTodoList" resultType="com.example.demo.model.TodoInfo">
     	SELECT id, text, checked, createTime, dday 
     	FROM todos
-    	ORDER BY createTime
+    	ORDER BY checked ,dday
     </select>
     
-    
-    <!-- 할 일 리스트 가져오기 -->
+    <!-- 검색된 할 일 리스트 가져오기 -->
     <select id="searchedTodoList" resultType="com.example.demo.model.TodoInfo" parameterType="String">
     	SELECT id, text, checked, createTime, dday 
     	FROM todos
@@ -19,7 +18,7 @@
     </select>
     
 	<!-- 할 일 추가 -->
-	<insert id="insertTodo" parameterType="com.example.demo.model.TodoInfo">
+	<insert id="insertTodo" parameterType="com.example.demo.model.TodoInfo" >
 		INSERT INTO todos(id, text, checked, createTime, dday)
 		VALUES(#{id}, #{text}, #{checked}, #{createTime}, #{dday})
 	</insert>
