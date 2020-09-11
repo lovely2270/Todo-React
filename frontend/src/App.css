@@ -1,16 +1,15 @@
 .Todo {
   width: 700px;
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-bottom: 2px solid var(--todoBackgroundColor);
 }
 
 .Templates {
   background-color: var(--backgroundColor);
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .blueTemplate,
@@ -47,17 +46,8 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.Today-Div {
-  display: block;
-  padding-left: 10px;
-  font-size: 20px;
-  padding-bottom: 1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .Todo-Form {
   background-color: white;
   flex: 0;
   padding: 1rem;
-  /* border-bottom: 2px solid var(--todoBackgroundColor); */
 }

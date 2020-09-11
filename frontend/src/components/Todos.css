@@ -30,13 +30,27 @@ hr {
   background-color: var(--todoBackgroundColor);
   color: white;
 }
+.searchBtn:hover,
+.createBtn:hover {
+  background-color: white;
+  color: var(--todoBackgroundColor);
+  font-weight: bold;
+}
 
 .Todo-Delete-Btn-Div {
   display: flex;
 }
+.Today-Div {
+  display: block;
+  background-color: var(--backgroundColor);
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .Todo-Delete-Btn {
   flex: 1;
-  margin-left: 80%;
+  margin-left: 40%;
   padding: 0.3rem;
   font-size: 15px;
   font-weight: bold;

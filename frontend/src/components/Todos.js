@@ -2,6 +2,7 @@ import React from "react";
 import "./Todos.css";
 import TodoItem from "./TodoItem";
 import DeleteChecked from "./DeleteChecked";
+import Today from "./common/Today";
 
 //할일들
 const Todos = ({
@@ -76,6 +77,9 @@ const Todos = ({
           </button>
         </form>
         <div className="Todo-Delete-Btn-Div">
+          <div className="Today-Div">
+            <Today />
+          </div>
           <DeleteChecked onRemoveChecked={onRemoveChecked} />
         </div>
         <hr />
